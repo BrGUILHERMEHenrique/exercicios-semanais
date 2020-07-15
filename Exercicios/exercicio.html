@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        body button{
+            background: none;
+            color:brown;
+            font-family: cursive;
+            border: none;
+        }
+    </style>
+    <title>exercicio1</title>
+</head>
+<body>
+    <input type="text" autocomplete="off" align="middle">Digite suas idades e números aqui.
+    <div><button id="imprimir" align="left">Imprimir nota</button></div>
+    <div><button id="maior" align="left">Verificar qual nota é maior</button></div>
+    <div><button id="idade" align="left">Imprimir idade</button></div>
+    <div><button id="maior2" align="left">Verificar idade</button></div>
+    <div><button id="sexo" align="left">lista de pessoas</button></div>
+    <div><button id="maisVelho">Veja qual é a pessoa mais velha a lista aqui</button></div>
+    <div><button id="iniciarperguntas" align="left">Peguntas nomes</button></div>
+    <div><button id="mostraNomes" align="left">Mostrar os nomes</button></div>
+    <div><button id="date" align="left">Inserir as datas na lista</button></div>
+    <div><button id="mostradata" align="left">mostra data</button></div>
+    <div><button id="quantidade" align="left">Veja a média das notas que escolher</button></div>
+    <div><button id="quadrado">veja o quadrado dos números aqui</button></div>
+    <div><button id="limpar" align="left">Limpar</button></div>
+
+    <div id="numeros" align="right"></div>
+    <div id="maiornum" align="right"></div>
+    <div id="maiorIdade" align="right"></div>
+    <div id="sexo" align="right"></div>
+    <div id="nomes" align="right"></div>
+    <div id="data" align="right"></div>
+    <script>
+        var notas = [];
+        function escolha(){
+        var esc = parseInt(prompt('Digite a quantidade de notas que quer ter a média'));
+        for (var c = 0; c < esc; c++){
+            var num = parseInt(prompt('Digite uma nota:'));
+            notas.push(num);
+           
+        }
+        var total = notas.reduce((total, notas) => total + notas, 0);
+        var media = total/esc;
+
+        document.querySelector('body div#numeros').innerHTML = media;
+        }
+        
+        function pegaNotasEimprime(){   
+            let media = [];
+            for(var c = 0; c < 5; c++){
+            var num = parseInt(prompt('Digite a nota'));
+            media.push(num ** 2);
+            }
+        document.querySelector('body div#numeros').innerHTML = (`Os quadrados dos números escolidos são: ${media.join("<br>")}`);
+
+        }
+            let list = [];//lista vazia para receber os números
+            //função que declara o push dos elementos para lista e imprime na tela
+            function mandar(){
+                //pegar o valor da input e manda para a lista
+                list.push(document.querySelector('body input').value);
+                //limpa o valor da input qudepois de mandar para lista
+                document.querySelector('body input').value = '';
+                //imprime os números na tela
+                document.querySelector('body div#numeros').innerHTML = list;
+            }
+
+            function verificar (){
+                var max = Math.max(...list);
+                document.querySelector('body div#maiornum').innerHTML = max;
+            }
+
+            var lista = []; 
+            function idade(){
+                lista.push(document.querySelector('body input').value);
+                document.querySelector('body input').value = '';
+                document.querySelector('body div#numeros').innerHTML = lista;
+            }
+
+            function maiorIdade(idades){
+                let idadem = [];
+                let idadeM = [];
+                for(valor of idades){
+                    if(valor < 18){
+                        idadem.push(valor);
+                    }else{
+                        idadeM.push(valor);
+
+                    }
+                    document.querySelector('body div#maiorIdade').innerHTML = (`${idadem} são menores de idade/ ${idadeM} são maiores de idade`);
+                }
+            }
+
+            var pessoas = [
+                {
+                    nome:"jão",
+                    altura: 1.70,
+                    sexo: "masculino"
+                },
+                {
+                    nome:"maria",
+                    altura: 1.50,
+                    sexo: "feminino"
+                },
+                {
+                    nome: "Daniel",
+                    altura: 1.90,
+                    sexo: "masculino"
+                },
+                {
+                    nome: "Joana",
+                    altura: 1.65,
+                    sexo: "feminino"
+                },
+                {
+                    nome: "Rose",
+                    altura: 1.30,
+                    sexo: "feminino"
+                }
+            ];
+
+                function mostraSexo(sex){
+                    let masc = [];
+                    let femi = [];
+                    let mascNum = 0;
+                    let femiNum = 0;
+                    for(value of sex){
+                        sexo = value.sexo
+                        nome = value.nome
+                        if(sexo == "masculino" ){
+                            masc.push(nome);
+                            mascNum++
+                        }else{
+                            femi.push(nome);
+                            femiNum++
+                        }
+                        document.querySelector('body div#sexo').innerHTML = (`As pessoas ${masc} são do sexo masculino contando assim ${mascNum} pessoas desse sexo <br> As pessoas ${femi} são do sexo feminino contando assim ${femiNum} desse sexo`);
+                    }
+                }
+                function maisAlto (){
+                    var altura = [];
+                    var nome = "";
+                    for (value of pessoas){
+                    altura1 = value.altura;
+                    altura.push(altura1);
+                }
+                var max = Math.max(...altura);
+                for(valor of pessoas){
+                    if(valor.altura == max){
+                        nome = valor.nome;
+                    }
+                }
+                document.querySelector('body div#numeros').innerHTML = (`A pessoas mais alta da lista é ${nome} e tem a altura de ${max}m`);
+                }
+                let nome = [];
+                function iniciaPrompt(){
+                    let quant = parseInt(prompt('Quantos números você quer digitar?'));
+                    for(let index = 0; index < quant; index++){
+                        let name = prompt('Digite um nome para ser inserido na lista:');
+                        nome.push(name);
+                    }
+                }
+                function mostraNome(){
+                    let rNome = nome.reverse();
+                    document.querySelector('body div#numeros').innerHTML = rNome.join("<br>");
+                }
+
+
+                let data = [];
+                function pegarData(){
+                    data.push(parseInt(prompt('Digite o dia')));
+                    data.push(parseInt(prompt('Digite o mês')));
+                    data.push(parseInt(prompt('Digite o ano')));
+
+                }
+                function mostraData(){
+                    let date = data.join('/');
+                    document.querySelector('body div#data').innerHTML = date;
+                }
+                document.querySelector('body button').onclick = mandar;
+
+                document.querySelector('body button#maior').onclick = verificar;
+
+                document.querySelector('body button#idade').onclick = idade;
+                document.querySelector('body button#maior2').onclick = function(){
+                    maiorIdade(lista);
+                }; 
+
+                document.querySelector('body button#sexo').onclick = function(){
+                    mostraSexo(pessoas);
+                };
+                document.querySelector('body button#maisVelho').onclick = maisVelho;
+
+                document.querySelector('body button#date').onclick = pegarData;
+
+                document.querySelector('body button#mostradata').onclick = mostraData;
+
+                document.querySelector('body button#iniciarperguntas').onclick = iniciaPrompt;
+                document.querySelector('body button#mostraNomes').onclick = mostraNome;
+
+                document.querySelector('body button#limpar').onclick = function(){
+                    window.location.reload();
+                }
+                document.querySelector('body button#quantidade').onclick = escolha;
+                document.querySelector('body button#quadrado').onclick = pegaNotasEimprime;
+
+    </script>
+</body>
+</html>

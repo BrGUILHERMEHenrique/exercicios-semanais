@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Mundo html -->
+
+    <script>
+        // Um objeto javascript é uma forma de representar coisas reais com varias propriedades
+        // var endereco = {  
+        //     rua: "Rua dos pinheiros",  
+        //     numero: 1293,  
+        //     bairro: "Centro",  
+        //     cidade: "São Paulo",  
+        //     uf: "SP"};
+
+        //     function dados(){
+        //         console.log(`O usuário mora em ${endereco.cidade}/${endereco.uf}, no bairro ${endereco.bairro} na rua ${endereco.rua}, com número: ${endereco.numero}.`);
+
+        //     }
+            
+        //     dados();
+
+
+        // function pares(x, y){
+        //     // array vazio que vai receber os números que são pares
+        //     var nuns = [];
+        //     while(x <= y){
+        //         if(x%2==0){
+        //             nuns.push(x);//manda os número reconhecidos como pares para lista 
+        //         }
+        //         x++
+        //     }
+        //     document.write(nuns + '<br>');
+        // }
+
+        // pares(32, 321);
+        // var l = "Javascript";
+        // var skill = ["Javascript","ReactJS", "React Native"];
+
+        // function temHabilidade(skill){
+        //     if(skill.indexOf("Javacript") != -1){
+        //         var res = true;
+        //     }else{
+        //         var res = false;
+        //     }
+        //     console.log(res);
+        // }
+        // temHabilidade(skill);
+
+        // function experiencia(anos){
+        //     if(anos <= 0 || anos <= 1){
+        //         console.log('Iniciante');
+        //     }else if(anos >= 1 || anos <= 3){
+        //         console.log('Intermediário');
+        //     }else if(anos >= 3 || anos <= 6) {
+        //         console.log('Avançado');
+        //     }else{
+        //         console.log('Jedi master');
+        //     }
+        // }
+        // var anoExperiencia = 7;
+        // experiencia(anoExperiencia);
+        var usuarios = [  
+            {    
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]  }, 
+            {    nome: "Gabriel",   
+                 habilidades: ["VueJS", "Ruby on Rails", "Elixir"] 
+            }
+        ];
+        
+        function mostraPessoas(user){
+            for(value of user){
+                nome = value.nome;
+                habilidade = value.habilidades.join(' / ');
+                console.log(`o nome é ${nome} e suas habilidades são ${habilidade}.`);
+            }
+        }
+
+        mostraPessoas(usuarios);
+
+    </script>
+</body>
+</html>

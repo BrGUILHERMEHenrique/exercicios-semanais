@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="função">CAlculo de letras</button>
+    
+    <script>
+        // var str = [];
+        // var maior= 1000000000000000;
+
+        // for(let i =0; i <2; i++){
+        //     var num = parseInt(prompt('Digite um número'));
+        //     if(num < maior){
+        //         maior = num;
+        //     }
+
+        //     str.push(num);
+        // }
+
+        // document.write(`Dentre os números escolhidos (${str}) o número ${maior} é o maior`);
+
+        var num1 = parseInt(prompt('DIgite um número'));
+        var num2 = parseInt(prompt('Digite outro número'));
+
+        if(num1 < num2){
+           var tela = document.createElement("p");
+            tela.innerHTML = (`O número ${num1} é o menor número dentre ${num1} e ${num2}`);
+            document.body.appendChild(tela);
+        }else{
+            var tela = document.createElement("p");
+            tela.innerHTML = (`O número ${num2} é o menor número dentre ${num1} e ${num2}`);
+            document.body.appendChild(tela);
+        }  
+
+
+        function calculatoraDeLetras(){
+            var texto = prompt('Digite o seu texto');//abre uma caixa para entrada de texto
+            var letra = prompt('Digite a letra que quer buscar');//abre outra caixa, dessa vez para pegar a letra para pesquisa
+            var texto2 = texto.indexOf(letra);//dentro do texto, procura aonde a letra está
+            var lista = [];//lista vazia para receber os lugares onde a letra está
+                //quando o indexOf não acha a letra ele retorna -1
+            while(texto2 != -1){//declara que enquanto o valor da letra for diferente de -1 faça os comandos abaixo
+                lista.push(texto2);//manda o número do lugar da letra para lista
+                texto2 = texto.indexOf(letra, texto2 + 1);//soma mais um para ir para próxima letra para continuar
+        }
+        var tela = document.createElement("p");//cria o elemento
+            tela.innerHTML = (`O número de vezes que a letra escolhida aparece é: ${lista.length} nas posições: ${lista}`);//coloca o que eu quero escrever
+            document.body.appendChild(tela);//coloca o elemento na tela
+        }
+        document.querySelector('body button#função').onclick = calculatoraDeLetras;//inicia a função
+
+        // var text = prompt('Digite sua frase');//pega a frase
+        // var letter = prompt('Digite a letra');//pega a letra
+        // var cont = 0;//inicia um contador em zero
+        // for(value of text){//para o valor em texto repite até que as letras acabem
+        //     if(value == letter){//se a letra em que o valor está é igual a que eu pedi
+        //         cont++//ele conta mais um para o contador
+        //     }
+        // }
+        // document.write(cont);//coloca o valor total do contador 
+
+        // var frase = prompt('Digite sua frase');//pega a frase
+        // var letra = prompt('Qual letra quer saber');//pega a letra
+        // var fraseS =frase.split(letra).length -1;//faz o split passando por toda frase e separa as letras e como o length é sempre 1 maior diminuimos isso
+        // document.write(fraseS);//coloca o valor na tela
+    </script>
+</body>
+</html>

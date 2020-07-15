@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var nota1 = parseInt(prompt('digite uma nota:'));
+        
+        var nota2 = parseInt(prompt('digite sua segunda nota:'));
+
+        var nota3 = parseInt(prompt('digite sua terceira nota:'));
+
+        var nota4 = parseInt(prompt('Digite sua quarta nota:'));
+
+        var soma = nota1+nota2+nota3+nota4;
+
+        var media = soma/4;
+
+
+        document.write('<h1 id="text">Sua média é: </h1>' +'<h1 id="media">'+ media + '</h1>');
+    </script>
+
+    <style>
+        body{
+            background-color:aliceblue;
+            color: black;
+            text-align: center;
+        }
+
+        body #text{
+            font-size: 100px;
+            color:black;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-decoration: aquamarine;
+            text-shadow:blanchedalmond;
+
+        }
+
+        body #media{
+            font-size: 90px;
+            font-family: cursive;
+            color:blue;
+            text-shadow: aquamarine;
+    
+        }
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <script>
+       var nota1 = parseInt(prompt('DIgite a primeira nota: '));
+       var nota2 = parseInt(prompt('Digite a segunda nota:  '));
+       var nota3 = parseInt(prompt('Digite a terceira nota: '));
+       var pular = '<br>';
+
+    //    Verifica se é um número
+        if (isNaN (nota1)){
+            nota1 = 0;
+        }
+        if (isNaN(nota2)){
+            nota2 = 0;
+        }
+        if (isNaN(nota3)){
+            nota3 = 0;
+        }
+        // Devolve as notas informadas 
+       document.write('Sua primeira nota foi:' + nota1 + pular);
+       document.write('Sua segunda nota foi: ' + nota2 + pular);
+       document.write('Sua terceira nota foi: ' + nota3 + pular);
+        // Soma e calcula as médias das notas
+    
+       var soma = nota1+nota2+nota3;
+       var media = soma/3;
+
+    //    escreve a média e soma na tela
+        document.write(' Sua média é: ' + media + pular );
+        document.write('A soma de todas as notas é: ' + '<h3>' + soma + '</h3>'+ pular)
+        // resultado se >é aprovado ou não
+
+        if(soma < 60 ){
+            document.write('<h1>Resultado: Reprovado</h1>');
+        } else {
+            document.write('<h1>Resultado: Aprovado</h1>');
+        }
+
+    </script>
+
+    <script>
+        var body = document.querySelector('body');
+        var nota = document.querySelector('body h3');
+        var res = document.querySelector('body h1');
+
+
+        body.style.backgroundColor = '#FFFACD';
+
+
+        nota.style.color = 'blue';
+        nota.style.fontFamily = 'cursive';
+        nota.style.fontSize = '50px';
+        nota.style.marginBottom = '0px';
+        nota.style.marginTop = '0px';
+
+        res.style.color = 'blue';
+        res.style.fontFamily = 'cursive';
+        res.style.fontSize = '50px';
+        res.style.marginTop = '-40px';
+        res.style.marginBottom = '0px';
+
+        
+        if(soma < 60 ){
+            nota.style.color = 'red';
+            nota.style.fontFamily = 'Verdana';
+            res.style.color = 'red';
+        }
+
+
+
+    </script>
+</body>
+</html>

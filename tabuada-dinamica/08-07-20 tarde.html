@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // pega o nome inserido pelo usuário
+        var name = prompt('Seja bem vindo, por favor digite seu nome:');
+        alert(`Muito bem vindo ${name} essa é a minha, a sua... a nossa tábuada!`);
+        // Pega os elementos que serão utilizados para tábuada
+        var u = parseInt(prompt('A seguir digte o número a ser multiplicado: '));
+        var n = parseInt(prompt('A seguir digite o número máximo de multiplicações: '));
+
+        // Declara cont como variavel fora de escolpo para dowhile e while
+        var cont = 0;
+
+        if(isNaN(u)){
+            var u = 0;
+        }
+        if(isNaN(n)){
+            var n = 0;
+        }
+        // Método DoWhile
+      do{
+           var res = u*cont;
+           if(res%2 != 0){
+            var t = 'Impar'
+           }else{
+               var t = 'Par'
+           }
+            document.write(`${u} x ${cont} = ${res} e é um número ${t} <br>`);
+            cont++
+        }while(cont <= n)
+        // Método For
+        /*for(var cont = 0; cont <= n; cont++){
+            var res = u * cont;
+            if(res%2 != 0){
+                var t = 'Impar';
+            }else{
+                var t = 'Par';
+            }
+
+            document.write(`${u} x ${cont} = ${res} e é um número ${t} <br>`);
+        }*/
+        // Método while 
+        /*while(cont <= n){
+            var res = u*cont;
+            if(res%2 != 0){
+                var t = 'Impar';
+            }else{
+                var t = 'Par';
+            }
+
+            document.write(`${u} x ${cont} = ${res} e é um número ${t} <br>`);
+
+            cont++
+        }*/
+    </script>
+</body>
+</html>
